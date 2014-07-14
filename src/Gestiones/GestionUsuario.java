@@ -58,6 +58,7 @@ public class GestionUsuario implements IGestion {
         usuario.setNombre(null);
         usuario.setApellido(null);
         usuario.setCedula(null);
+        
     }
 
     @Override

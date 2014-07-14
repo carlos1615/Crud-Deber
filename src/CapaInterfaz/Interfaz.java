@@ -289,6 +289,7 @@ public class Interfaz extends javax.swing.JFrame {
             
          usuario.Insertar();
          JOptionPane.showMessageDialog(this, "Dato insertado correctamente");
+         tabla();
         }
         catch (SQLException ex)
         {
@@ -381,7 +382,26 @@ public class Interfaz extends javax.swing.JFrame {
 
     private void jbtconsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtconsultaActionPerformed
         // TODO add your handling code here:
-        try
+       tabla();
+    
+    }//GEN-LAST:event_jbtconsultaActionPerformed
+
+    private void txtIdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdKeyPressed
+        // TODO add your handling code here:
+      
+    }//GEN-LAST:event_txtIdKeyPressed
+
+    private void txtIdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdKeyTyped
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_txtIdKeyTyped
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_btnSalirActionPerformed
+public void tabla(){
+     try
         {
          Conexionbd.getInstancia().conectar();
         ResultSet sen = Conexionbd.getInstancia().ejecutarbusqueda("SELECT * FROM usuario");
@@ -413,24 +433,7 @@ public class Interfaz extends javax.swing.JFrame {
         {
             Conexionbd.getInstancia().desconectar();
         }
-    
-    }//GEN-LAST:event_jbtconsultaActionPerformed
-
-    private void txtIdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdKeyPressed
-        // TODO add your handling code here:
-      
-    }//GEN-LAST:event_txtIdKeyPressed
-
-    private void txtIdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdKeyTyped
-        // TODO add your handling code here:
-       
-    }//GEN-LAST:event_txtIdKeyTyped
-
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_btnSalirActionPerformed
-
+}
     /**     * @param args the command line arguments
 
      */
