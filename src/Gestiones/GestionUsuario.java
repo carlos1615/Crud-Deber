@@ -8,7 +8,9 @@ package Gestiones;
 
 import CapaDatos.Conexionbd;
 import ClasesPojo.Usuario;
+import java.awt.Frame;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import javax.swing.table.DefaultTableModel;
 
@@ -136,3 +138,5 @@ public class GestionUsuario implements IGestion {
     
     
 }
+    
+

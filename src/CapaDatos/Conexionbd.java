@@ -135,20 +135,17 @@ public class Conexionbd {
            throw ex;
         }
     }
-//    public void consultasql(String sql) throws SQLException{
-//        Connection c = null;
-//        this.conectar=c;
-//        this.consulta=sql;
-//        try{
-//            Statement st;
-//            st = conectar.createStatement();
-//            resultado=st.executeQuery(consulta);
-//            mtd=resultado.getMetaData();
-//            } catch (SQLException ex) {
-//           throw ex;
-//        }
-//    }
-            
+        public ResultSet ejecutarbusquedatotal(String cadenaSql)throws SQLException
+    {
+        try {
+            sentencia=conectar.prepareStatement(cadenaSql);
+            resultado=sentencia.executeQuery();
+           
+            return resultado;
+        } catch (SQLException ex) {
+           throw ex;
+        }
+    }     
             
         
         
