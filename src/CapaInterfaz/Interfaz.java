@@ -22,6 +22,7 @@ import javax.swing.table.DefaultTableModel;
  * @author PROFESORES
  */
 public class Interfaz extends javax.swing.JFrame {
+   
 
     GestionUsuario usuario = new GestionUsuario ();
     
@@ -30,7 +31,9 @@ public class Interfaz extends javax.swing.JFrame {
      * Creates new form Interfaz
      */
     public Interfaz() {
+         
         initComponents();
+        Tabla_datos.setVisible(false);
     }
 
     /**
@@ -289,7 +292,11 @@ public class Interfaz extends javax.swing.JFrame {
             
          usuario.Insertar();
          JOptionPane.showMessageDialog(this, "Dato insertado correctamente");
-         tabla();
+            if (this.Tabla_datos.isVisible()) {    
+                tabla();
+            } else {    
+            }
+
         }
         catch (SQLException ex)
         {
@@ -343,6 +350,7 @@ public class Interfaz extends javax.swing.JFrame {
         {
             usuario.Modificar();
             JOptionPane.showMessageDialog(this, "El dato se modificó correctamente");
+            tabla();
         }
         catch(SQLException ex)
         {
@@ -360,7 +368,7 @@ public class Interfaz extends javax.swing.JFrame {
         {
             usuario.Eliminar();
             JOptionPane.showMessageDialog(this, "El dato se eliminó correctamente");
-            
+            tabla();
             }
         catch(SQLException ex)
         {
@@ -374,6 +382,7 @@ public class Interfaz extends javax.swing.JFrame {
         txtNombre.setText(usuario.getUsuario().getNombre());
         txtApe.setText(usuario.getUsuario().getApellido());
         txtCed.setText(usuario.getUsuario().getCedula());
+        Tabla_datos.setVisible(false);
       Tabla_datos.setModel(new DefaultTableModel());
        
             usuario.Nuevo();
@@ -382,7 +391,8 @@ public class Interfaz extends javax.swing.JFrame {
 
     private void jbtconsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtconsultaActionPerformed
         // TODO add your handling code here:
-       tabla();
+       Tabla_datos.setVisible(true);
+        tabla();
     
     }//GEN-LAST:event_jbtconsultaActionPerformed
 
