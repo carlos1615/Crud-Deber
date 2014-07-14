@@ -12,6 +12,7 @@ import java.awt.Frame;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -84,7 +85,8 @@ public class GestionUsuario implements IGestion {
         {
          Conexionbd.getInstancia().conectar();
         ResultSet rs = Conexionbd.getInstancia().ejecutarbusqueda("SELECT Id,Nombre,Apellido,Cedula FROM usuario WHERE Id = '"+usuario.getId()+"';");
-           while(rs.next()){
+       
+        while(rs.next()){
                usuario.setId(rs.getInt(1));
                usuario.setNombre(rs.getString(2));
                usuario.setApellido(rs.getString(3));
